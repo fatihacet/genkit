@@ -27,7 +27,7 @@ plugin_params = OllamaPluginParams(
         ModelDefinition(
             name=MISTRAL_MODEL,
             api_type=OllamaAPITypes.CHAT,
-        )
+        ),
     ],
 )
 
@@ -87,7 +87,9 @@ async def calculate_gablorken(value: int):
             Message(
                 role=Role.USER,
                 content=[
-                    TextPart(text=f'run tool "gablorken_tool" for {value}. Output format: ```{{output:output_number}}'),
+                    TextPart(
+                        text=f'run tool "gablorken_tool" for {value}. Output format: ```{{output:output_number}}'
+                    ),
                 ],
             )
         ],
